@@ -21,18 +21,11 @@
                     <span></span>
                     Menu
                 </button>
-                <ul>
-                    <li><a href="">pavement maintenance</a></li>
-                    <li><a href="">pothole repairs</a></li>
-                    <li><a href="">seal coating</a></li>
-                    <li><a href="">striping</a>
-                        <ul>
-                            <li><a href="">Company</a></li>
-                            <li><a href="">News</a></li>
-                            <li><a href="">CONTACT</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <?php wp_nav_menu(array(
+                                'theme_location' => 'topMenu',
+                                'container' => null,
+                                'menu_class' => 'topNav',
+                            )); ?>
             </nav>
             <div class="header__btn">
                 <a href="">get a quote</a>

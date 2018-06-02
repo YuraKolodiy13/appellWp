@@ -2,6 +2,11 @@
 
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+add_action( 'after_setup_theme', 'myMenu' );
+
+function myMenu(){
+    register_nav_menu('topMenu', 'меню в шапці');
+}
 
 function theme_styles(){
     wp_enqueue_style('slick', get_template_directory_uri() . '/assets/css/slick.css');

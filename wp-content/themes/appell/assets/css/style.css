@@ -30,7 +30,7 @@ body{
 .nav{
     width: 50%;
 }
-.nav ul{
+.nav .topNav{
     display: flex;
     justify-content: space-between;
     padding: 0;
