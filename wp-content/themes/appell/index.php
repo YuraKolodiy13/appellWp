@@ -58,7 +58,7 @@
                                 <img src="img/services2.jpg" alt="">
                             </div>
                             <div class="item__info">
-                                <a href="">Pothole Repair</a>
+                                <a href="">Seal Coating</a>
                                 <p>Whether you’re in need of a permanent or interim solution, our range of pothole repair services are designed to meet any budget.</p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                 <img src="img/services3.jpg" alt="">
                             </div>
                             <div class="item__info">
-                                <a href="">Pothole Repair</a>
+                                <a href="">Striping</a>
                                 <p>Whether you’re in need of a permanent or interim solution, our range of pothole repair services are designed to meet any budget.</p>
                             </div>
                         </div>
