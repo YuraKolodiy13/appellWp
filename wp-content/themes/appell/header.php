@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header__wrapper">
             <div class="header__logo">
-                <a href=""><img src="img/logo.png" alt="Логотип"></a>
+                <a href=""><img src="<?php bloginfo('template_directory'); ?>//assets/img/logo.png" /></a>
             </div>
             <nav class="header__nav nav">
                 <button class="nav__btn">

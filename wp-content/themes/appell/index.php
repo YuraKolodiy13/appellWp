@@ -14,9 +14,9 @@
                     <span>Technologically advanced pavement solutions, delivered.</span>
                 </div>
                 <div class="slider__items">
-                    <div class="slider__item"><div class="slider__overlay"></div><img src="img/slide1.jpg" alt=""></div>
-                    <div class="slider__item"><div class="slider__overlay"></div><img src="img/slide2.jpg" alt=""></div>
-                    <div class="slider__item"><div class="slider__overlay"></div><img src="img/slide3.jpg" alt=""></div>
+                    <div class="slider__item"><div class="slider__overlay"></div><img src="<?php bloginfo('template_directory'); ?>/assets/img/slide1.jpg" /></div>
+                    <div class="slider__item"><div class="slider__overlay"></div><img src="<?php bloginfo('template_directory'); ?>/assets/img/slide2.jpg" /></div>
+                    <div class="slider__item"><div class="slider__overlay"></div><img src="<?php bloginfo('template_directory'); ?>/assets/img/slide3.jpg" /></div>
                 </div>
                 <div class="slider__btn"></div>
                 <div class="appell__btn">
@@ -32,7 +32,7 @@
                     <div class="intro__wrapper">
                         <div class="intro__text">Professional Service. Personalized Attention.</div>
                         <div class="intro__img">
-                            <img src="img/intro1.jpg" alt="">
+                            <img src="<?php bloginfo('template_directory'); ?>//assets/img/intro1.jpg" />
                         </div>
                         <div class="intro__info">
                             <p>Changing the pavement maintenance industry, one parking lot at a time.</p>
@@ -41,36 +41,38 @@
                     </div>
                 </div>
                 <div class="services">
+
                     <div class="services__title title"><span>INDIVIDUAL</span> SERVICES</div>
                     <div class="services__items">
                         <div class="services__text">Setting High Standards</div>
-                        <div class="services__item item">
-                            <div class="item__img">
-                                <img src="img/services1.jpg" alt="">
-                            </div>
-                            <div class="item__info">
-                                <a href="">Pothole Repair</a>
-                                <p>Whether you’re in need of a permanent or interim solution, our range of pothole repair services are designed to meet any budget.</p>
-                            </div>
-                        </div>
-                        <div class="services__item item">
-                            <div class="item__img">
-                                <img src="img/services2.jpg" alt="">
-                            </div>
-                            <div class="item__info">
-                                <a href="">Seal Coating</a>
-                                <p>Whether you’re in need of a permanent or interim solution, our range of pothole repair services are designed to meet any budget.</p>
-                            </div>
-                        </div>
-                        <div class="services__item item">
-                            <div class="item__img">
-                                <img src="img/services3.jpg" alt="">
-                            </div>
-                            <div class="item__info">
-                                <a href="">Striping</a>
-                                <p>Whether you’re in need of a permanent or interim solution, our range of pothole repair services are designed to meet any budget.</p>
-                            </div>
-                        </div>
+
+                         <?php
+                            // параметры по умолчанию
+                            $args = array(
+                                'numberposts' => 3,
+                                'post_type'   => 'services',
+                                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            );
+
+                            $posts = get_posts( $args );
+
+                            foreach($posts as $post){ setup_postdata($post);
+                               ?>
+                               <div class="services__item item">
+                                   <div class="item__img">
+                                       <?php the_post_thumbnail(); ?>
+                                   </div>
+                                   <div class="item__info">
+                                       <a href=""><?php the_title(); ?></a>
+                                       <p><?php the_excerpt(); ?></p>
+                                   </div>
+                               </div>
+                               <?php
+                            }
+
+                            wp_reset_postdata(); // сброс
+                            ?>
+
                     </div>
                 </div>
             </div>
