@@ -29,7 +29,7 @@ body{
 .nav{
     width: 50%;
 }
-.nav .topNav{
+.nav .topNav > ul{
     display: flex;
     justify-content: space-between;
     padding: 0;
@@ -168,11 +168,43 @@ body{
     top: 20px;
 }
 
+.appell__get{
+    position: relative;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.appell__get::before{
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .5s;
+}
+.appell__get::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: .5s;
+}
+.appell__get:hover::before,
+.appell__get:hover::after{
+    right: 5%;
+}
+
 main{
     margin-top: 100px;
 }
 .appell{
-    max-width: 1440px;
     margin: 0 auto 100px;
 }
 .slider img{
@@ -513,7 +545,7 @@ main{
 .item__info p{
     font-size: 16px;
     line-height: 23px;
-    margin-left: 20px;
+    margin-left: 24px;
     opacity: .54;
 }
 .title{
@@ -629,7 +661,7 @@ main{
     .nav a{
         font-size: 12px;
         width: max-content;
-        margin: auto;
+        margin: 0 auto 20px;
     }
     .nav ul ul{
         display: block;
@@ -648,14 +680,9 @@ main{
     }
     .appell__btn a{
         width: 200px;
-        height: 50px;
     }
     .slider__btn{
         right: 20px;
-    }
-    .slider .slick-arrow{
-        width: 50px;
-        height: 50px;
     }
     .intro__text,
     .services__text{
@@ -691,7 +718,7 @@ main{
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
     }
-    .nav .topNav{
+    .nav .topNav > ul{
         opacity: 0;
         -webkit-transition: .5s;
         -o-transition: .5s;
@@ -731,9 +758,9 @@ main{
         -ms-transform: translate(0, 65px);
         transform: translate(0, 65px);
         opacity: 1;
-        top: 34px;
+        top: 35px;
         background-color: #fff;
-        padding: 30px 0;
+        padding: 35px 0 15px;
     }
     .nav{
         order: 2;
@@ -751,32 +778,18 @@ main{
         background-color: #000;
         color: #ffffff;
     }
-
-    .slider .slick-prev-img::after,
-    .slider .slick-next-img::after{
-        left: 17px;
-        top: 20px;
-    }
-    .slider .slick-prev-img::before,
-    .slider .slick-next-img::before{
-        left: 17px;
-        top: 29px;
-    }
-    .slider__btn{
-        height: 50px;
-    }
 }
 
 @media (max-width: 776px) {
     .slider__text{
-        left: 20px;
-        right: 20px;
+        left: 16px;
+        right: 16px;
     }
     .slider img{
         height: 480px;
     }
     .info__wrapper{
-        padding: 0 20px;
+        padding: 0 16px;
     }
     .slider__overlay{
         background-size: 200px;
@@ -792,7 +805,7 @@ main{
     }
     .slider__title{
         top: 36px;
-        left: 20px;
+        left: 16px;
     }
     .slider__text{
         top: 80px;
@@ -838,8 +851,72 @@ main{
         padding: 0 10px;
         box-sizing: border-box;
     }
+    .header__btn a{
+        font-size: 12px;
+    }
     .nav__btn{
         width: 110px;
         text-align: left;
+    }
+    .nav__btn span::after,
+    .nav__btn span::before{
+        width: 20px;
+    }
+    .nav__btn span{
+        width: 20px;
+        top: 12px;
+    }
+    .intro__img{
+        width: 80%;
+    }
+    .intro__text{
+        top: -115px;
+
+        width: 50%;
+    }
+    .intro__title{
+        margin-bottom: 130px;
+    }
+    .intro__info p{
+        font-size: 20px;
+        line-height: 29px;
+    }
+    .intro__info{
+        padding: 36px 36px 78px;
+    }
+    .intro__text,
+    .services__text{
+        font-size: 36px;
+        line-height: 43px;
+    }
+    .services__text{
+        margin-bottom: 40px;
+    }
+    .services__items .item,
+    .services__items .item:nth-child(2){
+        margin: 0 30px 40px;
+    }
+    .item__info a{
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .item__info p{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1900px) {
+    .header__wrapper{
+        max-width: 1840px;
+    }
+    .info__wrapper{
+        max-width: 1600px;
+    }
+    .intro__img{
+        width: 70%;
+    }
+    .intro__info{
+        right: -60px;
+        bottom: -120px;
     }
 }

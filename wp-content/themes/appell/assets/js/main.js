@@ -7,14 +7,12 @@ $(function () {
     $('.slider__text').slick({
         appendArrows: '.slick-prev-img',
         vertical: true,
-        speed: 1500,
         nextArrow: '<button type="button" class="slick-next slick-next-text"></button>',
         prevArrow: '<button type="button" class="slick-prev slick-prev-text"</button>'
     });
     $('.slider__title').slick({
         appendArrows: '.slick-prev-text',
         vertical: true,
-        speed: 1000,
         nextArrow: '<button type="button" class="slick-next slick-next-title"></button>',
         prevArrow: '<button type="button" class="slick-prev slick-prev-title"</button>'
     });
