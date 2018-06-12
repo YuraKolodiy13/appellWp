@@ -3,25 +3,36 @@
 <main>
         <div class="appell">
             <div class="appell__slider slider">
-                <div class="slider__title">
-                    <p>we are <span>appell</span></p>
-                    <p>innovation <span>driven</span></p>
-                    <p><span>flexible</span> sheduling</p>
-                </div>
-                <div class="slider__text">
-                    <span>We are the pavement maintenance specialists.</span>
-                    <span>Exceptional service, unparalleled professionalism.</span>
-                    <span>Technologically advanced pavement solutions, delivered.</span>
-                </div>
-                <div class="slider__items">
-                    <div class="slider__item"><div class="slider__overlay"></div><img src="<?php bloginfo('template_directory'); ?>/assets/img/slide1.jpg" /></div>
-                    <div class="slider__item"><div class="slider__overlay"></div><img src="<?php bloginfo('template_directory'); ?>/assets/img/slide2.jpg" /></div>
-                    <div class="slider__item"><div class="slider__overlay"></div><img src="<?php bloginfo('template_directory'); ?>/assets/img/slide3.jpg" /></div>
-                </div>
-                <div class="slider__btn"></div>
-                <div class="appell__btn">
-                    <a href="" class="appell__learn">learn more</a>
-                    <a href="" class="appell__get">get a quote</a>
+
+                <?php
+                $images = get_field('image');
+
+                if( $images ): ?>
+                    <div class='slider__items'>
+                        <?php foreach( $images as $image ): ?>
+                            <div class='slider__item'>
+                                 <div class="slider__overlay"></div><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+                <div class="slider__wrapper">
+                    <div class="slider__title">
+                        <p><?php the_field('title1'); ?></p>
+                        <p><?php the_field('title2'); ?></p>
+                        <p><?php the_field('title3'); ?></p>
+                    </div>
+                    <div class="slider__text">
+                        <span><?php the_field('text1'); ?></span>
+                        <span><?php the_field('text2'); ?></span>
+                        <span><?php the_field('text3'); ?></span>
+                    </div>
+                    <div class="slider__btn"></div>
+                    <div class="appell__btn">
+                        <a href="" class="appell__learn">learn more</a>
+                        <a href="" class="appell__get">get a quote</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,7 +83,6 @@
 
                             wp_reset_postdata(); // сброс
                             ?>
-
                     </div>
                 </div>
             </div>
